@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Booking</title>
-	<link rel="stylesheet" href="css/styleb.css">
+	<link rel="stylesheet" href="css/styleb.2.css">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
             <div class="logo">
                 <img src="image/logo.png">
                 
-            </div>
+         </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="signup.php">Sign up</a></li>
@@ -37,7 +37,7 @@
 
 				<hr>
 
-				<h4 class="heading-phone">Call Us: 0965 146 1428</h4>
+				<h4 class="heading-phone">Call Us: 0965 946 1428</h4>
 		</div>
 
 		<div class="container-form">

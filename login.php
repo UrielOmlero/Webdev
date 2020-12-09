@@ -24,7 +24,7 @@ if(isset($_POST['login'])) {
 <html>
 <head>
 <title>Log in</title>
-    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.1.css">
     <header>
         <div class="main">
             <div class="logo">

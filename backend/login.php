@@ -16,7 +16,8 @@ class Login {
 
 		if(mysqli_num_rows($query) == 1){
 			echo "Logged in successfully";
-            die($sql);
+         header("Location: bookf.php");
+
 		} else{
 			return "Invalid name and password";
 		}

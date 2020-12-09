@@ -18,7 +18,7 @@ $dbConnect = new DBConnection();
 	<header>
 		<div class="main">
 			<div class="logo">
-				<img src="image1/logo.png">
+				<img src="image/logo.png">
 				
 			</div>
 			<ul>
