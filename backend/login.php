@@ -26,7 +26,7 @@ class Login {
 				$_SESSION["authenticated"] = "true";
 
 			}
-         	header("Location: bookf.php");
+         	header("Location: dashboard.php");
 
 		} else{
 			return "Invalid username and password";
