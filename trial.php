@@ -1,28 +1,11 @@
-<?php  include('server.php'); 
 
-	if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$edit_state = false;
-		$record = mysqli_query($db, "SELECT * FROM info WHERE id=$id");
-
-
-			$n = mysqli_fetch_array($record);
-			$Fullname = $n['Fullname'];
-			$Email = $n['Email'];
-			$Date = $n['Date'];
-			$Time = $n['Time'];
-			$Event = $n['Event'];
-
-
-	}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Admin Page</title>
-	<link rel="stylesheet" href="css/Styletrial.1.css">
+	<link rel="stylesheet" href="css/Styletrial.css">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
 </head>
@@ -42,14 +25,7 @@
 
 
 	<div class="container">
-			<?php if (isset($_SESSION['msg'])): ?>
-			<div class="msg"> 
-				<?php 
-					echo $_SESSION['msg']; 
-					unset($_SESSION['msg']);
-				?>
-			</div>
-		<?php endif ?>
+			
 	<table>
 		<thead>
 			<tr>
@@ -63,32 +39,32 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php while ($row = mysqli_fetch_array($results)) { ?>
+		
 			<tr>
-				<td><?php echo $row['Fullname']; ?></td>
-				<td><?php echo $row['Email']; ?></td>
-				<td><?php echo $row['Date']; ?></td>
-				<td><?php echo $row['Time']; ?></td>
-				<td><?php echo $row['Event']; ?></td>
+				<td> Jedd </td>
+				<td> Urieljedd@gmail.com </td>
+				<td> march 16 </td>
+				<td> 09:12 </td>
+				<td> Wedding </td>
 				<td> 
-					<a href="trial.php?edit=<?php echo $row['id']; ?>">Edit</a>
+					<a href="#">Edit</a>
 				</td>
 				<td>
-					<a href="server.php?del=<?php echo $row['id']; ?>" >Delete</a>
+					<a href="#" >Delete</a>
 				</td>
 			</tr>  
-		<?php } ?>
+		
 </tbody>
 </table>
 	<form method="post" action="server.php">
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		<input type="hidden" name="id" >
 		<div class="input-group">
 			<label>Name</label>
-			<input type="text" name="Fullname" value="<?php echo $Fullname; ?>">
+			<input type="text" name="Fullname" >
 		</div>
 		<div class="input-group">
 			<label>Address</label>
-			<input type="email" name="Email" value="<?php echo $Email; ?>">
+			<input type="email" name="Email">
 		</div>
 		<div class="form-field">
 			<p>Date</p>
@@ -107,11 +83,10 @@
 			</select>
 		</div>
 		<div class="input-group">
-			<?php if ($edit_state == True): ?>
-				  <button type="submit" name="save" class="btn">Save</button>
-			<?php else: ?>
+							  <button type="submit" name="save" class="btn">Save</button>
+	
 				<button type="submit" name="update" class="btn">Update</button>
-			<?php endif ?>
+			
 		</div>
 	</form>
 	</div>
