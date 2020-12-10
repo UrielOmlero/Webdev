@@ -1,4 +1,38 @@
+<?php
+session_start();
 
+// print_r($_SESSION);
+// die();
+
+//Check if user is already authenticated
+if(!isset($_SESSION['authenticated'])) {
+    header("Location: login.php");
+}
+
+//Instantiate Class Book
+include_once('./backend/book.php');
+$book = new Book();
+
+
+
+//Handle Form Submit
+if(isset($_POST["book"])) {
+	$name = trim($_POST["name"]);
+	$email = trim($_POST["email"]);
+	$date = trim($_POST["date"]);
+	$time = trim($_POST["time"]);
+	$event = trim($_POST["event"]);
+
+	$createBooking = $book->addBooking($name, $email, $date, $time, $event);
+
+	if($createBooking) {
+		echo "<script>alert('Booking Successful')</script>";  
+	} else {
+		echo "<script>alert('Booking Not Successful')</script>";  
+	}
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +51,10 @@
          </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="signup.php">Sign up</a></li>
+				<?php if(isset($_SESSION['username'])) { ?>
+				<li><a href="index.php"><?php echo $_SESSION['username'] ?></a></li>
+				<?php } ?>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>   
         </div>  
     </header>

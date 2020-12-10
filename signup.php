@@ -36,7 +36,7 @@ if(isset($_POST['submit'])) {
             </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="bookf.php">Book</a></li>
+                <li><a href="dashboard.php">Book</a></li>
             </ul>   
         </div>  
     </header>

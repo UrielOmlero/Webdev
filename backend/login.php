@@ -24,9 +24,16 @@ class Login {
 				$_SESSION["isAdmin"] = $data['isAdmin'];
 				$_SESSION["username"] = $data['username'];
 				$_SESSION["authenticated"] = "true";
+				
+				//Check if logged in user is admin
+				if($data["isAdmin"] === "true") {
+					header("Location: admin.php");
+				} else {
+					header("Location: dashboard.php");
+				}
 
 			}
-         	header("Location: dashboard.php");
+         	
 
 		} else{
 			return "Invalid username and password";

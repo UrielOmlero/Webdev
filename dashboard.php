@@ -9,6 +9,29 @@ if(!isset($_SESSION['authenticated'])) {
     header("Location: login.php");
 }
 
+//Instantiate Class Book
+include_once('./backend/book.php');
+$book = new Book();
+
+
+
+//Handle Form Submit
+if(isset($_POST["book"])) {
+	$name = trim($_POST["name"]);
+	$email = trim($_POST["email"]);
+	$date = trim($_POST["date"]);
+	$time = trim($_POST["time"]);
+	$event = trim($_POST["event"]);
+
+	$createBooking = $book->addBooking($name, $email, $date, $time, $event);
+
+	if($createBooking) {
+		echo "<script>alert('Booking Successful')</script>";  
+	} else {
+		echo "<script>alert('Booking Not Successful')</script>";  
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -55,35 +78,35 @@ if(!isset($_SESSION['authenticated'])) {
 		</div>
 
 		<div class="container-form">
-				<form action="#">
+				<form action="" method="POST">
 					<h2 class="heading heading-yellow">Online Event Booking</h2>
 
 					<div class="form-field">
 						<p>Your Name</p>
-						<input type="text" placeholder="Your Name">
+						<input type="text" name="name" placeholder="Your Name">
 					</div>
 					<div class="form-field">
 						<p>Your email</p>
-						<input type="email" placeholder="Your email">
+						<input type="email" name="email" placeholder="Your email">
 					</div>
 					<div class="form-field">
 						<p>Date</p>
-						<input type="date">
+						<input type="date" name="date">
 					</div>
 					<div class="form-field">
 						<p>Time</p>
-						<input type="time">
+						<input type="time" name="time">
 					</div>
 					<div class="form-field">
 						<p>Type of event</p>
-						<select name="select" id="#">
-							<option value="1">Wedding</option>
-							<option value="2">Baptismal</option>
-							<option value="3">Burial</option>
+						<select name="event" id="#">
+							<option value="wedding">Wedding</option>
+							<option value="baptismal">Baptismal</option>
+							<option value="burial">Burial</option>
 						</select>
 					</div>
 
-					<button class="btn">Submit</button>
+					<button type="submit" name="book" class="btn">Submit</button>
 				</form>
 		</div>
 	</div>

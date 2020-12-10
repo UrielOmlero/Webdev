@@ -6,7 +6,7 @@ $login = new Login();
 
 //Check if user is already authenticated
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === "true") {
-    header("Location: bookf.php");
+    header("Location: dashboard.php");
 }
 
 if(isset($_POST['login'])) {
@@ -38,7 +38,7 @@ if(isset($_POST['login'])) {
             </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="bookf.php">Book</a></li>
+                <li><a href="dashboard.php">Book</a></li>
             </ul>   
         </div>  
     </header>

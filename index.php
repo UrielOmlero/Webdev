@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="button">
-			<a href="bookf.php" class="btn">Book now</a>
+			<a href="dashboard.php" class="btn">Book now</a>
 		</div>
 
 </body>
