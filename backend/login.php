@@ -29,12 +29,8 @@ class Login {
          	header("Location: bookf.php");
 
 		} else{
-			return "Invalid name and password";
+			return "Invalid username and password";
 		}
 
-	}
-
-	public function test () {
-		return "hello world";
 	}
 }

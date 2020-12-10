@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// print_r($_SESSION);
+// die();
+
+//Check if user is already authenticated
+if(!isset($_SESSION['authenticated'])) {
+    header("Location: login.php");
+}
 
 ?>
 
@@ -19,7 +28,10 @@
          </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="signup.php">Sign up</a></li>
+				<?php if(isset($_SESSION['username'])) { ?>
+				<li><a href="index.php"><?php echo $_SESSION['username'] ?></a></li>
+				<?php } ?>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>   
         </div>  
     </header>
