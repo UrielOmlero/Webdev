@@ -1,11 +1,3 @@
-<?php
-
-include_once('./backend/connection.php');
-
-$dbConnect = new DBConnection();
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

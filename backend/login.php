@@ -16,7 +16,17 @@ class Login {
 
 		if(mysqli_num_rows($query) == 1){
 			echo "Logged in successfully";
-         header("Location: bookf.php");
+			while ($data = mysqli_fetch_assoc($query)) {
+				// printf("id: %s\n", $data['id']);
+				// printf("username: %s\n", $data['username']);
+				// printf("isAdmin: %d\n", $data['isAdmin']);
+				//Once logged in add the data to session
+				$_SESSION["isAdmin"] = $data['isAdmin'];
+				$_SESSION["username"] = $data['username'];
+				$_SESSION["authenticated"] = "true";
+
+			}
+         	header("Location: bookf.php");
 
 		} else{
 			return "Invalid name and password";
