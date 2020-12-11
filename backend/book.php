@@ -26,4 +26,40 @@ class Book {
         }
     }
 
+    public function getAllBookings() {
+        $sql = "SELECT * FROM booking";
+
+        $result = mysqli_query($this->link, $sql);
+
+        return $result;
+    }
+
+    public function getBookingById($id) {
+
+        $sql = "SELECT * FROM booking WHERE id = '$id'";
+
+        $result = mysqli_query($this->link, $sql);
+
+        return $result;
+
+    }
+
+    public function updateBooking($id, $name, $email, $date, $time, $event) {
+        $sql = "UPDATE booking SET name = '$name', email = '$email', date = '$date', time = '$time', type = '$event' WHERE id = '$id'";
+
+        $result = mysqli_query($this->link, $sql);
+
+        return $result;
+
+    }
+
+    public function deleteBookingById($id) {
+        $sql = "DELETE FROM booking WHERE id = '$id'";
+
+        $result = mysqli_query($this->link, $sql);
+
+        return $result;
+
+    }
+
 }

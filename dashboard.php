@@ -7,6 +7,8 @@ session_start();
 //Check if user is already authenticated
 if(!isset($_SESSION['authenticated'])) {
     header("Location: login.php");
+}else if($_SESSION["isAdmin"] === "true") {
+	 header("Location: admin.php");
 }
 
 //Instantiate Class Book
@@ -78,36 +80,36 @@ if(isset($_POST["book"])) {
 		</div>
 
 		<div class="container-form">
-				<form action="" method="POST">
-					<h2 class="heading heading-yellow">Online Event Booking</h2>
+			<form action="" method="POST">
+				<h2 class="heading heading-yellow">Online Event Booking</h2>
 
-					<div class="form-field">
-						<p>Your Name</p>
-						<input type="text" name="name" placeholder="Your Name">
-					</div>
-					<div class="form-field">
-						<p>Your email</p>
-						<input type="email" name="email" placeholder="Your email">
-					</div>
-					<div class="form-field">
-						<p>Date</p>
-						<input type="date" name="date">
-					</div>
-					<div class="form-field">
-						<p>Time</p>
-						<input type="time" name="time">
-					</div>
-					<div class="form-field">
-						<p>Type of event</p>
-						<select name="event" id="#">
-							<option value="wedding">Wedding</option>
-							<option value="baptismal">Baptismal</option>
-							<option value="burial">Burial</option>
-						</select>
-					</div>
+				<div class="form-field">
+					<p>Your Name</p>
+					<input type="text" name="name" placeholder="Your Name">
+				</div>
+				<div class="form-field">
+					<p>Your email</p>
+					<input type="email" name="email" placeholder="Your email">
+				</div>
+				<div class="form-field">
+					<p>Date</p>
+					<input type="date" name="date">
+				</div>
+				<div class="form-field">
+					<p>Time</p>
+					<input type="time" name="time">
+				</div>
+				<div class="form-field">
+					<p>Type of event</p>
+					<select name="event" id="#">
+						<option value="wedding">Wedding</option>
+						<option value="baptismal">Baptismal</option>
+						<option value="burial">Burial</option>
+					</select>
+				</div>
 
-					<button type="submit" name="book" class="btn">Submit</button>
-				</form>
+				<button type="submit" name="book" class="btn">Submit</button>
+			</form>
 		</div>
 	</div>
 	
