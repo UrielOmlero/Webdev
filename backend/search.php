@@ -9,7 +9,7 @@ class Search {
     }
     
     public function searchBooking($data) {
-        $sql = "SELECT * FROM booking WHERE name LIKE '$data'";
+        $sql = "SELECT * FROM booking WHERE name LIKE '%$data%'";
 
         $result = mysqli_query($this->link, $sql);
 
