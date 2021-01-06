@@ -52,7 +52,6 @@ if(isset($_POST['login'])) {
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter Password">
             <input type="submit" name="login" value="Login">
-            <a href="loginadmin.php">Are you an admin?</a><br>
             <a href="signup.php">Don't have an account?</a>
         </form>
         

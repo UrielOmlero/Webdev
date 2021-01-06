@@ -55,7 +55,7 @@ $bookings = $book->getAllBookings();
 				
 		</div>
 			<ul>
-				<li><a href="index.php">Home</a></li>
+				<li><a href="searchadmin.php">Search</a></li>
 				<?php if(isset($_SESSION['username'])) { ?>
 				<li><a href="index.php"><?php echo $_SESSION['username'] ?></a></li>
 				<?php } ?>
@@ -68,6 +68,7 @@ $bookings = $book->getAllBookings();
 		<?php if($bookings) { ?>
 		<table>
 			<thead>
+				
 				<tr>
 					<th>Name</th>
 					<th>Email</th>

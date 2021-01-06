@@ -52,7 +52,7 @@ if(isset($_POST["book"])) {
                 
          </div>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="search.php">Search</a></li>
 				<?php if(isset($_SESSION['username'])) { ?>
 				<li><a href="index.php"><?php echo $_SESSION['username'] ?></a></li>
 				<?php } ?>
